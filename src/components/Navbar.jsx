@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { user } = UserAuth();
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
@@ -26,6 +29,7 @@ const Navbar = () => {
           <li>
             <a>Sign In</a>
           </li>
+          <li>Welcome, {user}</li>
         </ul>
       </div>
     </div>
