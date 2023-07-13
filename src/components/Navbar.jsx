@@ -2,7 +2,23 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user } = UserAuth();
+  const { user, googleSignIn, logOut } = UserAuth();
+
+  const handleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleLogOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -26,10 +42,20 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-          <li>
-            <a>Sign In</a>
-          </li>
-          <li>Welcome, {user}</li>
+          {!user ? (
+            <li>
+              <div onClick={handleSignIn}>Sign In</div>
+            </li>
+          ) : (
+            <li>
+              <div onClick={handleLogOut}>Log out</div>
+            </li>
+          )}
+          {user && (
+            <li>
+              <div>Hello, {user.displayName}</div>
+            </li>
+          )}
         </ul>
       </div>
     </div>
