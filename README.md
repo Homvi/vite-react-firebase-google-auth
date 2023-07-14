@@ -26,6 +26,7 @@ Once you have your account set up, create a new project in Firebase. After your 
 
 After you've registered your app, you'll see a Firebase SDK snippet that looks something like this:
 
+```javascript
 var firebaseConfig = {
 apiKey: "AIza...",
 authDomain: "...firebaseapp.com",
@@ -35,12 +36,14 @@ messagingSenderId: "...",
 appId: "...",
 measurementId: "G-..."
 };
+```
 
 You have two options:
 Copy this config object to the src/firebase.js to replace the similar part (This will work but if you want to push it to github or want to use in the production it is not recommended for security reasons) .
 
 Other option is that you can create a .env file In the root of your project directory, create a new file named .env. In this file, you'll need to define the following environment variables:
 
+```javscript
 VITE_APP_API_KEY=apiKeyFromFirebaseSDK
 VITE_APP_AUTH_DOMAIN=authDomainFromFirebaseSDK
 VITE_APP_PROJECT_ID=projectIdFromFirebaseSDK
@@ -48,5 +51,6 @@ VITE_APP_STORAGE_BUCKET=storageBucketFromFirebaseSDK
 VITE_APP_MESSAGING_SENDER_ID=messagingSenderIdFromFirebaseSDK
 VITE_APP_APP_ID=appIdFromFirebaseSDK
 VITE_APP_MEASUREMENT_ID=measurementIdFromFirebaseSDK
+```
 
 Now you're all set! Enjoy your exploration into this React-Vite-Firebase odyssey.
