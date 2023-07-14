@@ -1,4 +1,4 @@
-# React-Vite-Firebase
+# React-Vite-Goole-Firebase-Auth
 
 Welcome to a spectacular blend of React, Vite, and Firebase. Login seamlessly with Google, explore your well-crafted profile, and sign out with a simple click.
 
